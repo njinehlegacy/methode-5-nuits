@@ -284,8 +284,8 @@ img { max-width: 100%; height: auto; }
 }
 
 .payment-zone {
-  background: #fff;
-  border: 2px dashed var(--lavande);
+  background: var(--blanc-casse);
+  border: none;
   border-radius: var(--radius-lg);
   padding: 48px 32px;
   text-align: center;
@@ -539,20 +539,15 @@ img { max-width: 100%; height: auto; }
 <section class="payment-section">
   <div class="container">
 
-    <!-- ===== PLACEHOLDER : Intégrer ici le formulaire Systeme.io ===== -->
-    <div class="payment-zone" id="systemeio-form">
-      <div class="payment-zone__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
-        </svg>
-      </div>
-      <p class="payment-zone__title">Formulaire de paiement</p>
-      <p class="payment-zone__hint">
-        Remplacez cette zone par le code embed de votre formulaire de paiement Systeme.io.<br>
-        Collez le code dans <code>#systemeio-form</code>
-      </p>
+    <!-- ===== STRIPE BUY BUTTON ===== -->
+    <div class="payment-zone" id="stripe-checkout">
+      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+      <stripe-buy-button
+        buy-button-id="buy_btn_1SxEO8AwhaByIrABtgxZqV4c"
+        publishable-key="pk_live_51SxAAnAwhaByIrAB8kSECSkSQ527ljIY7jjaVMqugDWPas0F6JUnj5kAWOYthR2alHFJauee5PYVQ9FkTvhHacf300W1VTmlcA"
+      ></stripe-buy-button>
     </div>
-    <!-- ===== FIN PLACEHOLDER ===== -->
+    <!-- ===== FIN STRIPE ===== -->
 
     <div class="trust">
       <div class="trust__item">
@@ -565,7 +560,7 @@ img { max-width: 100%; height: auto; }
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
         </svg>
-        CB / PayPal
+        Carte bancaire
       </div>
       <div class="trust__item">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
