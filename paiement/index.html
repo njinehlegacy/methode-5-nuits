@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paiement — La Méthode des 5 Nuits</title>
+<meta name="description" content="Finalisez votre commande — La Méthode des 5 Nuits, guide PDF pour aider votre enfant à s'endormir seul.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bleu-nuit: #1B2A4A;
+  --lavande: #B8A9D4;
+  --bleu-pastel: #C5D5E8;
+  --beige-lune: #F5EDE3;
+  --corail: #E8856C;
+  --corail-hover: #D4704F;
+  --gris-charbon: #2D3142;
+  --blanc-casse: #FAFAF7;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: 'Caveat', cursive;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 4px 20px rgba(27, 42, 74, 0.08);
+  --shadow-button: 0 4px 12px rgba(232, 133, 108, 0.3);
+  --shadow-hover: 0 8px 30px rgba(232, 133, 108, 0.4);
+
+  --max-width: 640px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--gris-charbon);
+  line-height: 1.6;
+  background: var(--blanc-casse);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-heading); line-height: 1.25; }
+a { color: inherit; }
+img { max-width: 100%; height: auto; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  background: var(--bleu-nuit);
+  color: #fff;
+  text-align: center;
+  padding: 28px 24px 24px;
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(184,169,212,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.header__logo {
+  margin-bottom: 16px;
+}
+
+.header__logo svg {
+  width: 44px;
+  height: auto;
+}
+
+.header__step {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bleu-pastel);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.header__step svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Progress dots */
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.progress__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+}
+
+.progress__dot--done {
+  background: var(--corail);
+}
+
+.progress__dot--active {
+  background: var(--corail);
+  box-shadow: 0 0 0 3px rgba(232,133,108,0.3);
+}
+
+.progress__line {
+  width: 32px;
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+}
+
+.progress__line--done {
+  background: var(--corail);
+}
+
+/* ============================================================
+   ORDER SUMMARY
+   ============================================================ */
+.order-summary {
+  background: var(--beige-lune);
+  padding: 40px 24px;
+}
+
+.order-summary .container {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.order-summary__title {
+  font-size: 22px;
+  color: var(--bleu-nuit);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.order-summary__product {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(27,42,74,0.08);
+  margin-bottom: 20px;
+}
+
+.order-summary__icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: var(--bleu-nuit);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-summary__icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.order-summary__name {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--bleu-nuit);
+  margin-bottom: 2px;
+}
+
+.order-summary__format {
+  font-size: 13px;
+  color: var(--gris-charbon);
+  opacity: 0.7;
+}
+
+.order-summary__includes {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.order-summary__includes li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.order-summary__includes li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  background: var(--corail);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-summary__includes li::after {
+  content: '\2713';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.order-summary__price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 2px solid var(--bleu-nuit);
+}
+
+.order-summary__total-label {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--bleu-nuit);
+}
+
+.order-summary__prices {
+  text-align: right;
+}
+
+.order-summary__old-price {
+  font-size: 14px;
+  color: var(--gris-charbon);
+  opacity: 0.5;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+.order-summary__new-price {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--corail);
+}
+
+/* ============================================================
+   PAYMENT FORM ZONE
+   ============================================================ */
+.payment-section {
+  padding: 40px 24px;
+  background: var(--blanc-casse);
+}
+
+.payment-zone {
+  background: #fff;
+  border: 2px dashed var(--lavande);
+  border-radius: var(--radius-lg);
+  padding: 48px 32px;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.payment-zone__icon svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.4;
+}
+
+.payment-zone__title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--bleu-nuit);
+}
+
+.payment-zone__hint {
+  font-size: 13px;
+  color: var(--gris-charbon);
+  opacity: 0.6;
+  max-width: 360px;
+  line-height: 1.5;
+}
+
+.payment-zone__hint code {
+  background: var(--beige-lune);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* ============================================================
+   TRUST BADGES
+   ============================================================ */
+.trust {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 24px 0 0;
+}
+
+.trust__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gris-charbon);
+  opacity: 0.7;
+}
+
+.trust__item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* ============================================================
+   REASSURANCE
+   ============================================================ */
+.reassurance {
+  background: var(--beige-lune);
+  padding: 40px 24px;
+}
+
+.reassurance .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reassurance__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+}
+
+.reassurance__icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.reassurance__text strong {
+  display: block;
+  color: var(--bleu-nuit);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.reassurance__text span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--bleu-nuit);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 13px;
+}
+
+.footer__logo {
+  margin-bottom: 16px;
+}
+
+.footer__logo svg {
+  width: 48px;
+  height: auto;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--lavande);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 480px) {
+  .order-summary .container {
+    padding: 24px 20px;
+  }
+
+  .order-summary__product {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .order-summary__price-row {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .order-summary__prices {
+    text-align: center;
+  }
+
+  .trust {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .payment-zone {
+    padding: 32px 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="header">
+  <div class="container">
+    <div class="header__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="44" height="44">
+        <path d="M60 15C42 15 27 30 27 48.5S42 82 60 82c2.5 0 4.9-.4 7.1-.9C58.5 77 52.5 67 52.5 56c0-12.5 8.1-23.1 18.4-26.6C67.5 24.5 64 22 60 15z" fill="#B8A9D4"/>
+        <g transform="translate(24, 90)">
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(16,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(32,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(48,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(64,0)"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="header__step">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+      </svg>
+      Paiement s&eacute;curis&eacute;
+    </div>
+
+    <div class="progress">
+      <div class="progress__dot progress__dot--done"></div>
+      <div class="progress__line progress__line--done"></div>
+      <div class="progress__dot progress__dot--active"></div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     ORDER SUMMARY
+     ============================================================ -->
+<section class="order-summary">
+  <div class="container">
+    <h1 class="order-summary__title">Votre commande</h1>
+
+    <div class="order-summary__product">
+      <div class="order-summary__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+          <path d="M60 15C42 15 27 30 27 48.5S42 82 60 82c2.5 0 4.9-.4 7.1-.9C58.5 77 52.5 67 52.5 56c0-12.5 8.1-23.1 18.4-26.6C67.5 24.5 64 22 60 15z" fill="#B8A9D4"/>
+        </svg>
+      </div>
+      <div>
+        <p class="order-summary__name">La M&eacute;thode des 5 Nuits</p>
+        <p class="order-summary__format">Guide PDF &mdash; Acc&egrave;s imm&eacute;diat par email</p>
+      </div>
+    </div>
+
+    <ul class="order-summary__includes">
+      <li>Guide complet (25+ pages)</li>
+      <li>Bonus : Fiche Routine du Soir</li>
+      <li>Bonus : Journal de Suivi des 5 Nuits</li>
+    </ul>
+
+    <div class="order-summary__price-row">
+      <span class="order-summary__total-label">Total</span>
+      <div class="order-summary__prices">
+        <span class="order-summary__old-price">47&euro;</span>
+        <span class="order-summary__new-price">17&euro;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PAYMENT FORM ZONE
+     ============================================================ -->
+<section class="payment-section">
+  <div class="container">
+
+    <!-- ===== PLACEHOLDER : Intégrer ici le formulaire Systeme.io ===== -->
+    <div class="payment-zone" id="systemeio-form">
+      <div class="payment-zone__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+        </svg>
+      </div>
+      <p class="payment-zone__title">Formulaire de paiement</p>
+      <p class="payment-zone__hint">
+        Remplacez cette zone par le code embed de votre formulaire de paiement Systeme.io.<br>
+        Collez le code dans <code>#systemeio-form</code>
+      </p>
+    </div>
+    <!-- ===== FIN PLACEHOLDER ===== -->
+
+    <div class="trust">
+      <div class="trust__item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+        </svg>
+        Paiement s&eacute;curis&eacute; SSL
+      </div>
+      <div class="trust__item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+        </svg>
+        CB / PayPal
+      </div>
+      <div class="trust__item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+        </svg>
+        Envoi imm&eacute;diat par email
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     REASSURANCE
+     ============================================================ -->
+<section class="reassurance">
+  <div class="container">
+    <div class="reassurance__item">
+      <div class="reassurance__icon">&#128274;</div>
+      <div class="reassurance__text">
+        <strong>Paiement 100% s&eacute;curis&eacute;</strong>
+        <span>Vos donn&eacute;es sont prot&eacute;g&eacute;es par un chiffrement SSL 256 bits.</span>
+      </div>
+    </div>
+
+    <div class="reassurance__item">
+      <div class="reassurance__icon">&#9889;</div>
+      <div class="reassurance__text">
+        <strong>Acc&egrave;s imm&eacute;diat</strong>
+        <span>Vous recevrez le guide PDF par email dans les minutes qui suivent votre achat.</span>
+      </div>
+    </div>
+
+    <div class="reassurance__item">
+      <div class="reassurance__icon">&#128231;</div>
+      <div class="reassurance__text">
+        <strong>Une question ?</strong>
+        <span>Contactez-nous &agrave; <a href="mailto:methode5nuits@gmail.com" style="color: var(--corail); text-decoration: none;">methode5nuits@gmail.com</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer__logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="48" height="48">
+      <path d="M60 15C42 15 27 30 27 48.5S42 82 60 82c2.5 0 4.9-.4 7.1-.9C58.5 77 52.5 67 52.5 56c0-12.5 8.1-23.1 18.4-26.6C67.5 24.5 64 22 60 15z" fill="#B8A9D4" opacity="0.5"/>
+      <g transform="translate(24, 90)">
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(16,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(32,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(48,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(64,0)"/>
+      </g>
+    </svg>
+  </div>
+  <p style="margin-bottom: 4px;">5 Nuits &mdash; Le sommeil de votre enfant, nuit apr&egrave;s nuit.</p>
+  <p><a href="#">Mentions l&eacute;gales</a> &middot; <a href="#">CGV</a> &middot; <a href="mailto:methode5nuits@gmail.com">Contact</a></p>
+</footer>
+
+</body>
+</html>

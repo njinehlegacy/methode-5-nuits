@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Méthode des 5 Nuits — Apprenez à votre enfant à s'endormir seul</title>
+<meta name="description" content="La méthode douce et progressive pour apprendre à votre enfant à s'endormir seul en 5 nuits. Sans larmes. Sans culpabilité.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CSS VARIABLES & TOKENS
+   ============================================================ */
+:root {
+  --bleu-nuit: #1B2A4A;
+  --lavande: #B8A9D4;
+  --bleu-pastel: #C5D5E8;
+  --beige-lune: #F5EDE3;
+  --corail: #E8856C;
+  --corail-hover: #D4704F;
+  --gris-charbon: #2D3142;
+  --blanc-casse: #FAFAF7;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: 'Caveat', cursive;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  --shadow-card: 0 4px 20px rgba(27, 42, 74, 0.08);
+  --shadow-button: 0 4px 12px rgba(232, 133, 108, 0.3);
+  --shadow-hover: 0 8px 30px rgba(232, 133, 108, 0.4);
+
+  --max-width: 720px;
+  --section-padding: 80px 24px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--gris-charbon);
+  background: var(--blanc-casse);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  color: var(--bleu-nuit);
+}
+
+h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 700; }
+h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 700; margin-bottom: 0.6em; }
+h3 { font-size: clamp(20px, 3vw, 26px); font-weight: 600; margin-bottom: 0.5em; }
+
+p { margin-bottom: 1em; }
+
+.accent-text {
+  font-family: var(--font-accent);
+  color: var(--lavande);
+}
+
+.stat-number {
+  font-family: var(--font-accent);
+  font-size: clamp(42px, 8vw, 64px);
+  font-weight: 700;
+  color: var(--corail);
+  line-height: 1;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.section {
+  padding: var(--section-padding);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ============================================================
+   CTA BUTTON
+   ============================================================ */
+.cta {
+  display: inline-block;
+  background: var(--corail);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 17px;
+  padding: 18px 40px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  text-align: center;
+}
+
+.cta:hover {
+  background: var(--corail-hover);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.cta--large {
+  font-size: 19px;
+  padding: 22px 48px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.cta-subtitle {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: var(--bleu-nuit);
+  color: #fff;
+  text-align: center;
+  padding: 60px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(184,169,212,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(197,213,232,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__logo {
+  margin-bottom: 32px;
+}
+
+.hero__logo svg {
+  width: 180px;
+  height: auto;
+}
+
+.hero h1 {
+  color: #fff;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__stat {
+  font-size: 15px;
+  color: var(--bleu-pastel);
+  margin-bottom: 8px;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__stat strong {
+  color: var(--corail);
+}
+
+.hero__tagline {
+  font-family: var(--font-accent);
+  font-size: clamp(22px, 4vw, 30px);
+  color: var(--lavande);
+  margin: 24px 0 36px;
+}
+
+.hero .cta {
+  margin-bottom: 16px;
+}
+
+.hero__reassurance {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Stars decoration */
+.stars-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 20px 0;
+}
+
+.stars-row svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   SECTION VARIANTS
+   ============================================================ */
+.section--blanc { background: var(--blanc-casse); }
+.section--beige { background: var(--beige-lune); }
+.section--bleu {
+  background: var(--bleu-nuit);
+  color: #fff;
+}
+.section--bleu h2,
+.section--bleu h3 { color: #fff; }
+.section--bleu .accent-text { color: var(--lavande); }
+
+.section--gradient {
+  background: linear-gradient(160deg, var(--bleu-nuit) 0%, #2a3d66 50%, var(--bleu-nuit) 100%);
+  color: #fff;
+  text-align: center;
+}
+.section--gradient h2 { color: #fff; }
+
+/* ============================================================
+   SECTION PROBLEME
+   ============================================================ */
+.problem__intro {
+  font-family: var(--font-accent);
+  font-size: clamp(22px, 4vw, 28px);
+  color: var(--bleu-nuit);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.pain-points {
+  list-style: none;
+  margin: 32px 0;
+}
+
+.pain-points li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.pain-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--corail);
+  opacity: 0.2;
+}
+
+.stat-block {
+  text-align: center;
+  padding: 40px 24px;
+  margin: 40px 0;
+  background: var(--beige-lune);
+  border-radius: var(--radius-lg);
+}
+
+/* ============================================================
+   SECTION MAUVAIS CONSEILS
+   ============================================================ */
+.bad-advice {
+  display: grid;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.bad-advice__card {
+  border: 1.5px solid var(--corail);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  background: rgba(232,133,108,0.04);
+}
+
+.bad-advice__card h3 {
+  color: var(--corail);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.bad-advice__card p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.third-way {
+  margin-top: 40px;
+  padding: 32px;
+  background: rgba(184,169,212,0.1);
+  border-left: 4px solid var(--lavande);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.third-way h3 {
+  color: var(--bleu-nuit);
+}
+
+.third-way ul {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.third-way li {
+  padding-left: 24px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.third-way li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--corail);
+  font-weight: 700;
+}
+
+/* ============================================================
+   SECTION METHODE — TIMELINE
+   ============================================================ */
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--lavande), var(--corail));
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 36px;
+  padding: 20px 24px;
+  background: var(--blanc-casse);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 24px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--corail);
+  border: 3px solid var(--blanc-casse);
+  box-shadow: 0 0 0 2px var(--corail);
+}
+
+.timeline__night {
+  font-family: var(--font-accent);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--corail);
+  margin-bottom: 4px;
+}
+
+.timeline__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--bleu-nuit);
+  margin-bottom: 8px;
+}
+
+.timeline__desc {
+  font-size: 15px;
+  margin-bottom: 0;
+  color: var(--gris-charbon);
+  opacity: 0.85;
+}
+
+/* Night header row: title + stars on same line */
+.timeline__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+/* Stars in timeline */
+.timeline__stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.timeline__stars svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 32px;
+  }
+  .timeline::before {
+    left: 10px;
+  }
+  .timeline__item::before {
+    left: -28px;
+    width: 14px;
+    height: 14px;
+  }
+  .timeline__stars svg {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+/* Pillars */
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.pillar-card {
+  padding: 24px;
+  background: var(--beige-lune);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.pillar-card__icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.pillar-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.pillar-card p {
+  font-size: 14px;
+  margin-bottom: 0;
+  opacity: 0.85;
+}
+
+@media (max-width: 540px) {
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   SECTION "CE QUE VOUS RECEVEZ"
+   ============================================================ */
+.offer-stack {
+  margin: 40px 0;
+}
+
+.offer-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  margin-bottom: 16px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.offer-item__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--corail);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.offer-item__content h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.offer-item__content p {
+  font-size: 15px;
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
+.offer-item__value {
+  font-family: var(--font-accent);
+  font-size: 15px;
+  color: var(--lavande);
+  margin-top: 4px;
+}
+
+.offer-total {
+  text-align: center;
+  margin: 48px 0 32px;
+  padding: 32px;
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: var(--radius-lg);
+}
+
+.offer-total__old {
+  font-size: 22px;
+  text-decoration: line-through;
+  opacity: 0.5;
+  margin-bottom: 8px;
+}
+
+.offer-total__price {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 8vw, 56px);
+  font-weight: 700;
+  color: var(--corail);
+}
+
+.offer-total__label {
+  font-size: 15px;
+  opacity: 0.7;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   TEMOIGNAGES
+   ============================================================ */
+.testimonials {
+  display: grid;
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.testimonial {
+  background: rgba(255,255,255,0.7);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  position: relative;
+}
+
+.testimonial::before {
+  content: '\201C';
+  font-family: var(--font-heading);
+  font-size: 64px;
+  color: var(--lavande);
+  opacity: 0.3;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  line-height: 1;
+}
+
+.testimonial__text {
+  font-family: var(--font-accent);
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--gris-charbon);
+  margin-bottom: 16px;
+  padding-top: 16px;
+}
+
+.testimonial__author {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bleu-nuit);
+}
+
+.testimonial__detail {
+  font-size: 13px;
+  color: var(--gris-charbon);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   FAQ ACCORDEON
+   ============================================================ */
+.faq-list {
+  margin: 40px 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(27, 42, 74, 0.1);
+}
+
+.faq-item__question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 40px 20px 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--bleu-nuit);
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.4;
+}
+
+.faq-item__question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--corail);
+  transition: transform 0.2s;
+}
+
+.faq-item.open .faq-item__question::after {
+  content: '−';
+}
+
+.faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item__answer-inner {
+  padding: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--gris-charbon);
+  opacity: 0.85;
+}
+
+/* ============================================================
+   SECTION CTA FINALE
+   ============================================================ */
+.final-cta {
+  text-align: center;
+}
+
+.final-cta h2 {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta__tagline {
+  font-family: var(--font-accent);
+  font-size: clamp(20px, 4vw, 28px);
+  color: var(--lavande);
+  margin: 16px 0 40px;
+}
+
+.guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+
+.guarantee svg {
+  width: 20px;
+  height: 20px;
+  fill: rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--bleu-nuit);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 13px;
+}
+
+.footer__logo {
+  margin-bottom: 12px;
+}
+
+.footer__logo svg {
+  width: 100px;
+  height: auto;
+  opacity: 0.5;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--lavande);
+}
+
+/* ============================================================
+   STICKY CTA MOBILE
+   ============================================================ */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 12px 16px;
+  background: rgba(27, 42, 74, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+}
+
+.sticky-cta .cta {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .sticky-cta {
+    display: block;
+  }
+
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+/* ============================================================
+   BANDEAU GRADIENT
+   ============================================================ */
+.bandeau-top {
+  height: 4px;
+  background: linear-gradient(90deg, var(--bleu-nuit) 0%, var(--lavande) 50%, var(--corail) 100%);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 56px 20px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 48px 20px 64px;
+  }
+
+  .cta--large {
+    max-width: 100%;
+    font-size: 17px;
+  }
+
+  .offer-item {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ============================================================
+   MULTI-DEVICE MOCKUP
+   ============================================================ */
+.devices {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  margin: 32px auto 40px;
+  position: relative;
+  max-width: 700px;
+}
+
+/* --- Shared screen content (PDF cover) --- */
+.device__screen-content {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #1e3058 0%, var(--bleu-nuit) 40%, #152240 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stars pattern on all screens */
+.device__screen-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 60% 25%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 80% 45%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 35% 65%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 75% 75%, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1px 1px at 15% 85%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 50% 90%, rgba(255,255,255,0.15), transparent);
+  pointer-events: none;
+}
+
+.device__screen-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.device__moon svg { display: block; }
+.device__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+.device__subtitle {
+  font-family: var(--font-body);
+  color: var(--bleu-pastel);
+  line-height: 1.4;
+}
+.device__tagline {
+  font-family: var(--font-accent);
+  color: var(--lavande);
+}
+.device__stars {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+.device__stars svg { fill: var(--corail); }
+.device__brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--lavande);
+  letter-spacing: 0.04em;
+}
+
+/* --- LAPTOP --- */
+.device--laptop {
+  position: relative;
+  z-index: 1;
+}
+
+.laptop__lid {
+  width: 380px;
+  height: 247px;
+  background: #222;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 12px 5px;
+  box-shadow: 0 -2px 15px rgba(0,0,0,0.2);
+}
+
+.laptop__screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Laptop screen content sizes */
+.device--laptop .device__moon svg { width: 36px; height: 36px; margin-bottom: 8px; }
+.device--laptop .device__title { font-size: 20px; margin-bottom: 5px; }
+.device--laptop .device__subtitle { font-size: 9px; max-width: 220px; margin: 0 auto 8px; }
+.device--laptop .device__tagline { font-size: 14px; margin-bottom: 10px; }
+.device--laptop .device__stars svg { width: 12px; height: 12px; }
+.device--laptop .device__brand { font-size: 10px; margin-top: 10px; }
+
+.laptop__base {
+  width: 420px;
+  height: 14px;
+  background: linear-gradient(to bottom, #ccc, #aaa);
+  border-radius: 0 0 8px 8px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.laptop__base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #999;
+  border-radius: 0 0 4px 4px;
+}
+
+/* --- TABLET --- */
+.device--tablet {
+  position: relative;
+  z-index: 2;
+  margin-left: -30px;
+  margin-bottom: -10px;
+}
+
+.tablet__body {
+  width: 175px;
+  height: 250px;
+  background: #1a1a1a;
+  border-radius: 14px;
+  padding: 14px 10px;
+  box-shadow: 4px 8px 24px rgba(0,0,0,0.35);
+}
+
+.tablet__screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tablet__camera {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #333;
+  border-radius: 50%;
+}
+
+/* Tablet screen content sizes */
+.device--tablet .device__moon svg { width: 24px; height: 24px; margin-bottom: 5px; }
+.device--tablet .device__title { font-size: 15px; margin-bottom: 3px; }
+.device--tablet .device__subtitle { font-size: 7px; max-width: 120px; margin: 0 auto 5px; }
+.device--tablet .device__tagline { font-size: 10px; margin-bottom: 7px; }
+.device--tablet .device__stars svg { width: 9px; height: 9px; }
+.device--tablet .device__brand { font-size: 7px; margin-top: 7px; }
+
+/* --- PHONE --- */
+.device--phone {
+  position: relative;
+  z-index: 3;
+  margin-left: -20px;
+  margin-bottom: -20px;
+}
+
+.phone__body {
+  width: 100px;
+  height: 200px;
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 16px 6px 20px;
+  box-shadow: 4px 8px 20px rgba(0,0,0,0.35);
+  position: relative;
+}
+
+.phone__screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Notch */
+.phone__notch {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 8px;
+  background: #1a1a1a;
+  border-radius: 0 0 6px 6px;
+  z-index: 5;
+}
+
+/* Home indicator */
+.phone__home {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 3px;
+  background: #444;
+  border-radius: 3px;
+}
+
+/* Phone screen content sizes */
+.device--phone .device__moon svg { width: 16px; height: 16px; margin-bottom: 4px; }
+.device--phone .device__title { font-size: 9.5px; margin-bottom: 2px; }
+.device--phone .device__subtitle { display: none; }
+.device--phone .device__tagline { font-size: 7px; margin-bottom: 5px; }
+.device--phone .device__stars svg { width: 6px; height: 6px; }
+.device--phone .device__stars { gap: 2px; }
+.device--phone .device__brand { font-size: 6px; margin-top: 5px; }
+
+/* Devices label */
+.devices-label {
+  text-align: center;
+  font-family: var(--font-accent);
+  font-size: 18px;
+  color: var(--lavande);
+  margin: 16px 0 8px;
+  opacity: 0.7;
+}
+
+/* Devices shadow */
+.devices-shadow {
+  width: 500px;
+  height: 24px;
+  margin: -5px auto 32px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 640px) {
+  .devices {
+    zoom: 0.5;
+    margin: 16px auto 0;
+  }
+  .devices-shadow {
+    zoom: 0.5;
+  }
+  .hero__stat {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .devices {
+    zoom: 0.7;
+    margin: 20px auto 8px;
+  }
+  .devices-shadow {
+    zoom: 0.7;
+  }
+}
+
+/* ============================================================
+   BAD ADVICE CARDS
+   ============================================================ */
+.bad-advice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 32px 0;
+}
+
+@media (max-width: 640px) {
+  .bad-advice { grid-template-columns: 1fr; }
+}
+
+.bad-advice__card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-card);
+  border-left: 4px solid var(--corail);
+}
+
+.bad-advice__card h3 {
+  font-family: var(--font-accent);
+  font-size: 20px;
+  color: var(--corail);
+  margin-bottom: 12px;
+}
+
+.bad-advice__card p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   THIRD WAY
+   ============================================================ */
+.third-way {
+  background: var(--blanc-casse);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  margin-top: 40px;
+  border: 2px solid var(--lavande);
+}
+
+.third-way h3 {
+  color: var(--bleu-nuit);
+  margin-bottom: 12px;
+}
+
+.third-way ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.third-way ul li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.third-way ul li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--lavande);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* (duplicate timeline/pillars block removed — see SECTION METHODE above) */
+
+/* ============================================================
+   OFFER STACK
+   ============================================================ */
+.offer-stack {
+  margin: 40px 0;
+}
+
+.offer-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.offer-item:last-child { border-bottom: none; }
+
+.offer-item__icon {
+  font-size: 36px;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-sm);
+}
+
+.offer-item__content h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.offer-item__content p {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.offer-item__value {
+  font-family: var(--font-accent);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: line-through;
+  text-decoration-color: var(--corail);
+  text-decoration-thickness: 2px;
+  opacity: 1;
+}
+
+.offer-total {
+  text-align: center;
+  padding: 40px 0;
+  margin-bottom: 24px;
+}
+
+.offer-total__old {
+  font-size: 16px;
+  text-decoration: line-through;
+  opacity: 0.5;
+  margin-bottom: 8px;
+}
+
+.offer-total__price {
+  font-family: var(--font-accent);
+  font-size: clamp(56px, 10vw, 80px);
+  font-weight: 700;
+  color: var(--corail);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.offer-total__label {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.testimonial {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.testimonial::before {
+  content: '\201C';
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-family: var(--font-heading);
+  font-size: 48px;
+  color: var(--lavande);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.testimonial__text {
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  padding-top: 8px;
+}
+
+.testimonial__author {
+  font-weight: 600;
+  color: var(--bleu-nuit);
+  font-size: 17px;
+}
+
+.testimonial__detail {
+  color: var(--corail);
+  font-family: var(--font-accent);
+  font-size: 18px;
+}
+
+/* ============================================================
+   FAQ ACCORDEON
+   ============================================================ */
+.faq-list {
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(45, 49, 66, 0.1);
+}
+
+.faq-item__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--bleu-nuit);
+  text-align: left;
+  line-height: 1.4;
+}
+
+.faq-item__question::after {
+  content: '+';
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--corail);
+  flex-shrink: 0;
+  margin-left: 16px;
+  transition: transform 0.2s;
+}
+
+.faq-item.open .faq-item__question::after {
+  content: '\2212';
+}
+
+.faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item__answer-inner {
+  padding: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta {
+  padding: 20px 0;
+}
+
+.final-cta__tagline {
+  font-family: var(--font-accent);
+  font-size: clamp(24px, 4vw, 32px);
+  color: var(--lavande);
+  margin-bottom: 32px;
+}
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.guarantee svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--lavande);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--bleu-nuit);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 13px;
+}
+
+.footer__logo {
+  margin-bottom: 16px;
+}
+
+.footer__logo svg {
+  width: 48px;
+  height: auto;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--lavande);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Bandeau gradient signature -->
+<div class="bandeau-top"></div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="container">
+    <!-- Logo icon -->
+    <div class="hero__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="80" height="80">
+        <path d="M60 15C42 15 27 30 27 48.5S42 82 60 82c2.5 0 4.9-.4 7.1-.9C58.5 77 52.5 67 52.5 56c0-12.5 8.1-23.1 18.4-26.6C67.5 24.5 64 22 60 15z" fill="#B8A9D4"/>
+        <g transform="translate(24, 90)">
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(16,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(32,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(48,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(64,0)"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="hero__stat"><strong>37%</strong> des enfants de 6 mois à 5 ans ne dorment pas assez (CDC, 2021)</p>
+
+    <h1>Votre enfant peut apprendre à s'endormir seul.<br>En 5 nuits.</h1>
+
+    <p class="hero__tagline">Sans larmes. Sans culpabilité.</p>
+
+    <!-- Multi-device Mockup -->
+    <p class="devices-label">Lisible sur tous vos écrans</p>
+    <div class="devices">
+
+      <!-- Laptop -->
+      <div class="device--laptop">
+        <div class="laptop__lid">
+          <div class="laptop__screen">
+            <div class="device__screen-content">
+              <div class="device__moon"><svg viewBox="0 0 80 80" fill="none"><path d="M50 8C35 8 23 20 23 36s12 28 27 28c4 0 8-1 11-2.5C55 65 47 68 38 68 20 68 5 53 5 36S20 4 38 4c4.5 0 8.5.7 12.5 2C50 6.5 50 7.2 50 8z" fill="#B8A9D4"/></svg></div>
+              <div class="device__title">La Méthode<br>des 5 Nuits</div>
+              <div class="device__subtitle">La méthode douce et progressive pour apprendre à votre enfant à s'endormir seul</div>
+              <div class="device__tagline">Sans larmes. Sans culpabilité.</div>
+              <div class="device__stars">
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+              </div>
+              <div class="device__brand">5 Nuits</div>
+            </div>
+          </div>
+        </div>
+        <div class="laptop__base"></div>
+      </div>
+
+      <!-- Tablet -->
+      <div class="device--tablet">
+        <div class="tablet__body">
+          <div class="tablet__camera"></div>
+          <div class="tablet__screen">
+            <div class="device__screen-content">
+              <div class="device__moon"><svg viewBox="0 0 80 80" fill="none"><path d="M50 8C35 8 23 20 23 36s12 28 27 28c4 0 8-1 11-2.5C55 65 47 68 38 68 20 68 5 53 5 36S20 4 38 4c4.5 0 8.5.7 12.5 2C50 6.5 50 7.2 50 8z" fill="#B8A9D4"/></svg></div>
+              <div class="device__title">La Méthode<br>des 5 Nuits</div>
+              <div class="device__subtitle">La méthode douce pour apprendre à votre enfant à s'endormir seul</div>
+              <div class="device__tagline">Sans larmes. Sans culpabilité.</div>
+              <div class="device__stars">
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+              </div>
+              <div class="device__brand">5 Nuits</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="device--phone">
+        <div class="phone__body">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="device__screen-content">
+              <div class="device__moon"><svg viewBox="0 0 80 80" fill="none"><path d="M50 8C35 8 23 20 23 36s12 28 27 28c4 0 8-1 11-2.5C55 65 47 68 38 68 20 68 5 53 5 36S20 4 38 4c4.5 0 8.5.7 12.5 2C50 6.5 50 7.2 50 8z" fill="#B8A9D4"/></svg></div>
+              <div class="device__title">La Méthode<br>des 5 Nuits</div>
+              <div class="device__tagline">Sans larmes.</div>
+              <div class="device__stars">
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3"/></svg>
+              </div>
+              <div class="device__brand">5 Nuits</div>
+            </div>
+          </div>
+          <div class="phone__home"></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="devices-shadow"></div>
+
+    <a href="#checkout" class="cta cta--large">
+      Je veux retrouver mes soirées — 17&euro;
+      <span class="cta-subtitle">Accès immédiat au guide PDF + 2 bonus</span>
+    </a>
+
+    <p class="hero__reassurance">Téléchargement instantané &middot; Paiement sécurisé</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION PROBLEME
+     ============================================================ -->
+<section class="section section--blanc">
+  <div class="container">
+    <p class="problem__intro fade-in">Il est 23h47. Vous venez de vous recoucher pour la troisième fois. Vos yeux brûlent. Votre dos est en vrac. Et quelque part dans la pénombre, votre enfant pleure. Encore.</p>
+
+    <div class="fade-in">
+      <p>Vous avez tout essayé. Le bercer pendant des heures. Le nourrir alors qu'il n'a même pas faim. Vous allonger par terre à côté de son lit. Chanter la même berceuse 47 fois d'affilée.</p>
+
+      <p>Et là, dans le noir, épuisé(e), vous vous demandez : <strong>est-ce que ça va finir un jour ?</strong></p>
+    </div>
+
+    <ul class="pain-points fade-in">
+      <li>Votre patience s'évapore dès 18h parce que vous n'avez pas dormi</li>
+      <li>Le couple tourne au ralenti — plus de soirées, plus d'énergie</li>
+      <li>Vous culpabilisez, quoi que vous fassiez (trop présent, pas assez...)</li>
+      <li>Vous avez peur que "ça ne passe jamais"</li>
+    </ul>
+
+    <div class="stat-block fade-in">
+      <div class="stat-number">44 jours</div>
+      <p style="margin-top: 12px; margin-bottom: 0; font-size: 16px; color: var(--gris-charbon);">de sommeil perdus la première année.<br><span style="font-size: 14px; opacity: 0.6;">Source : Sleep Foundation</span></p>
+    </div>
+
+    <p class="fade-in" style="text-align: center; font-weight: 600; color: var(--bleu-nuit); font-size: 18px;">Vous méritez de retrouver le sommeil. <span style="color: var(--corail);">En 5 nuits.</span></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION MAUVAIS CONSEILS
+     ============================================================ -->
+<section class="section section--beige">
+  <div class="container">
+    <h2 class="fade-in" style="text-align: center;">Les deux conseils pourris qu'on vous donne</h2>
+
+    <div class="bad-advice fade-in">
+      <div class="bad-advice__card">
+        <h3>&laquo; Laisse-le pleurer, il comprendra &raquo;</h3>
+        <p>Fermer la porte et ne pas revenir. Si vous culpabilisez, si vous craquez au bout de 8 minutes, si vous retournez en catastrophe dans la chambre... vous envoyez un message contradictoire. Et la prochaine fois, il pleurera encore plus fort.</p>
+      </div>
+      <div class="bad-advice__card">
+        <h3>&laquo; Ça passera, il n'est pas prêt &raquo;</h3>
+        <p>On vous dit d'attendre. Que c'est "normal". Les études montrent que les troubles du sommeil non traités peuvent durer <strong>des années</strong>. Pas des mois. Des années. Et pendant ce temps, toute la famille tourne au ralenti.</p>
+      </div>
+    </div>
+
+    <div class="third-way fade-in">
+      <h3>La troisième voie — celle qui marche</h3>
+      <p>Entre "le laisser hurler" et "ne rien faire en espérant", il y a une approche qui :</p>
+      <ul>
+        <li>Respecte le rythme de votre enfant</li>
+        <li>Ne le laisse jamais seul en détresse</li>
+        <li>Réduit votre présence petit à petit</li>
+        <li>Donne des résultats en quelques nuits</li>
+      </ul>
+      <p style="margin-top: 16px; margin-bottom: 0;"><strong>Ça s'appelle le retrait progressif bienveillant.</strong> C'est le cœur de la Méthode des 5 Nuits.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION METHODE
+     ============================================================ -->
+<section class="section section--blanc">
+  <div class="container">
+    <h2 class="fade-in" style="text-align: center;">La méthode, nuit par nuit</h2>
+    <p class="fade-in" style="text-align: center; max-width: 500px; margin: 0 auto 40px; opacity: 0.8;">Chaque soir, vous vous éloignez un petit peu plus. Mais vous ne disparaissez jamais.</p>
+
+    <div class="timeline fade-in">
+
+      <div class="timeline__item">
+        <div class="timeline__header">
+          <div class="timeline__night">Nuit 1</div>
+          <div class="timeline__stars">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="timeline__title">Le rituel et la présence rassurante</div>
+        <p class="timeline__desc">Vous installez le rituel du soir et restez assis(e) au bord du lit. Contact possible, présence totale.</p>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__header">
+          <div class="timeline__night">Nuit 2</div>
+          <div class="timeline__stars">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="timeline__title">Le premier éloignement</div>
+        <p class="timeline__desc">Chaise à 1 mètre du lit. Vous êtes là, il vous voit, mais le contact physique diminue.</p>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__header">
+          <div class="timeline__night">Nuit 3</div>
+          <div class="timeline__stars">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="timeline__title">La voix sans contact</div>
+        <p class="timeline__desc">Près de la porte, plus de contact physique. Votre voix seule le rassure. C'est le tournant.</p>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__header">
+          <div class="timeline__night">Nuit 4</div>
+          <div class="timeline__stars">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#B8A9D4" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="timeline__title">La présence intermittente</div>
+        <p class="timeline__desc">Hors de la chambre, vous repassez régulièrement. Il sait que vous n'êtes pas loin.</p>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__header">
+          <div class="timeline__night">Nuit 5</div>
+          <div class="timeline__stars">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+          </div>
+        </div>
+        <div class="timeline__title">L'endormissement autonome</div>
+        <p class="timeline__desc">Votre enfant s'endort seul. Vous êtes dans la pièce d'à côté. Et il le sait. Mission accomplie.</p>
+      </div>
+
+    </div>
+
+    <!-- 4 Piliers -->
+    <h3 class="fade-in" style="text-align: center; margin-top: 48px;">Les 4 piliers de la méthode</h3>
+    <div class="pillars fade-in">
+      <div class="pillar-card">
+        <div class="pillar-card__icon">&#127769;</div>
+        <h3>Rituel prévisible</h3>
+        <p>Les mêmes gestes, dans le même ordre, chaque soir. Le cerveau capte le message.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">&#128694;</div>
+        <h3>Présence décroissante</h3>
+        <p>Vous êtes là, mais un chouïa moins chaque nuit. Progressif et rassurant.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">&#128172;</div>
+        <h3>Réponse graduée</h3>
+        <p>S'il pleure, vous répondez. Mais de moins en moins : toucher, puis voix, puis présence.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">&#128737;</div>
+        <h3>Filet de sécurité</h3>
+        <p>Même à la nuit 5, votre enfant sait que vous êtes là. La porte n'est jamais fermée.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;" class="fade-in">
+      <a href="#checkout" class="cta cta--large">Je commence ce soir — 17&euro;</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION CE QUE VOUS RECEVEZ
+     ============================================================ -->
+<section class="section section--bleu" id="offre">
+  <div class="container">
+    <h2 class="fade-in" style="text-align: center;">Ce que vous recevez</h2>
+
+    <div class="offer-stack fade-in">
+      <div class="offer-item">
+        <div class="offer-item__icon">&#128214;</div>
+        <div class="offer-item__content">
+          <h3>Le Guide "La Méthode des 5 Nuits"</h3>
+          <p>25-30 pages. Protocole complet nuit par nuit + échelle de réponse graduée + adaptations par âge (6 mois - 5 ans).</p>
+          <div class="offer-item__value">Valeur : 37&euro;</div>
+        </div>
+      </div>
+
+      <div class="offer-item">
+        <div class="offer-item__icon">&#128203;</div>
+        <div class="offer-item__content">
+          <h3>Bonus 1 — Fiche "Ma Routine du Soir en 5 Étapes"</h3>
+          <p>1 page à imprimer et coller sur le frigo. Le rituel parfait, étape par étape, pour ne jamais improviser.</p>
+          <div class="offer-item__value">Valeur : 9&euro;</div>
+        </div>
+      </div>
+
+      <div class="offer-item">
+        <div class="offer-item__icon">&#128221;</div>
+        <div class="offer-item__content">
+          <h3>Bonus 2 — Journal de Suivi des 5 Nuits</h3>
+          <p>2 pages à imprimer. Suivez les progrès chaque nuit : heure de coucher, durée d'endormissement, réveils, observations.</p>
+          <div class="offer-item__value">Valeur : 9&euro;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer-total fade-in">
+      <div class="offer-total__old">Valeur totale : 55&euro;</div>
+      <div class="offer-total__price">17&euro;</div>
+      <div class="offer-total__label">Accès immédiat &middot; Téléchargement instantané</div>
+    </div>
+
+    <div style="text-align: center;" class="fade-in">
+      <a href="#checkout" class="cta cta--large" id="checkout">
+        Oui, je veux retrouver mes nuits — 17&euro;
+        <span class="cta-subtitle">Accès immédiat après paiement</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION PREUVE SCIENTIFIQUE
+     ============================================================ -->
+<section class="section section--beige">
+  <div class="container">
+    <h2 class="fade-in" style="text-align: center;">Une méthode validée par la science</h2>
+    <p class="fade-in" style="text-align: center; max-width: 520px; margin: 0 auto 40px; opacity: 0.8;">La Méthode des 5 Nuits repose sur le <strong>retrait progressif parental</strong>, l'une des techniques les mieux documentées en sommeil pédiatrique.</p>
+
+    <div class="testimonials fade-in">
+      <div class="testimonial">
+        <p class="testimonial__text">Le retrait progressif parental est recommandé comme intervention de première intention pour les problèmes d'endormissement chez l'enfant. Les améliorations sont généralement observées en <strong>3 à 7 nuits</strong>.</p>
+        <div class="testimonial__author">American Academy of Sleep Medicine</div>
+        <div class="testimonial__detail">Recommandations cliniques</div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial__text">Les interventions comportementales pour le sommeil de l'enfant (dont le retrait progressif) <strong>n'entraînent pas d'effets négatifs</strong> sur le stress de l'enfant, son attachement ou ses émotions, même 5 ans après.</p>
+        <div class="testimonial__author">Étude Gradisar et al., Pediatrics (2016)</div>
+        <div class="testimonial__detail">Suivi longitudinal sur 5 ans</div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial__text">Entre <strong>25% et 50%</strong> des enfants de 6 mois à 5 ans présentent des difficultés de sommeil. Une routine du coucher cohérente réduit significativement le temps d'endormissement et les réveils nocturnes.</p>
+        <div class="testimonial__author">Mindell et al., Sleep Medicine Reviews</div>
+        <div class="testimonial__detail">Méta-analyse sur les routines du coucher</div>
+      </div>
+    </div>
+
+    <p class="fade-in" style="text-align: center; font-size: 13px; opacity: 0.5; margin-top: 16px;">Sources : AASM, Pediatrics (2016), Sleep Medicine Reviews. Les résultats peuvent varier selon les enfants.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION FAQ
+     ============================================================ -->
+<section class="section section--blanc">
+  <div class="container">
+    <h2 class="fade-in" style="text-align: center;">Questions fréquentes</h2>
+
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-item__question">Mon enfant a moins de 6 mois, ça marche quand même ?</button>
+        <div class="faq-item__answer">
+          <div class="faq-item__answer-inner">Ce guide est conçu pour les enfants de 6 mois à 5 ans. Avant 6 mois, le sommeil est encore très immature et les réveils nocturnes sont physiologiquement normaux. On recommande d'attendre, et de consulter votre pédiatre si vous avez des inquiétudes.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">Est-ce que mon enfant va pleurer ?</button>
+        <div class="faq-item__answer">
+          <div class="faq-item__answer-inner">Probablement un peu, surtout les nuits 1 et 2. Mais ce n'est pas du "cry it out" : vous ne le laissez jamais seul en détresse. Vous êtes présent(e), vous répondez, vous rassurez — juste avec un peu plus de distance chaque nuit. La plupart des parents constatent une nette diminution des pleurs dès la nuit 3.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">Et si ça ne marche pas en 5 nuits ?</button>
+        <div class="faq-item__answer">
+          <div class="faq-item__answer-inner">Certains enfants y arrivent en 3 nuits, d'autres ont besoin de 7. Le guide explique comment adapter le rythme si votre enfant a besoin de plus de temps. L'important, c'est la progression, pas la perfection.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">On est en cododo, c'est compatible ?</button>
+        <div class="faq-item__answer">
+          <div class="faq-item__answer-inner">La méthode nécessite que votre enfant ait son propre espace de sommeil (lit, chambre). Si vous êtes en cododo, la transition vers un lit séparé est un prérequis. Ce guide ne couvre pas cette transition spécifique.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">C'est adapté aux jumeaux / fratrie ?</button>
+        <div class="faq-item__answer">
+          <div class="faq-item__answer-inner">Le guide couvre la méthode pour un enfant à la fois. Pour les jumeaux ou la fratrie dans la même chambre, la méthode reste applicable mais demande une coordination supplémentaire. On recommande de commencer par l'enfant qui a le plus de difficultés.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">Je reçois le guide comment ?</button>
+        <div class="faq-item__answer">
+          <div class="faq-item__answer-inner">Immédiatement après votre paiement, vous recevez un lien de téléchargement par email. Le guide est au format PDF, lisible sur téléphone, tablette ou ordinateur. Vous pouvez aussi l'imprimer.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION CTA FINALE
+     ============================================================ -->
+<section class="section section--gradient">
+  <div class="container final-cta">
+    <div class="stars-row fade-in">
+      <svg viewBox="0 0 24 24" width="24" height="24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+      <svg viewBox="0 0 24 24" width="24" height="24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+      <svg viewBox="0 0 24 24" width="24" height="24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+      <svg viewBox="0 0 24 24" width="24" height="24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+      <svg viewBox="0 0 24 24" width="24" height="24"><polygon points="12,2 15.1,8.3 22,9.3 17,14.1 18.2,21 12,17.7 5.8,21 7,14.1 2,9.3 8.9,8.3" fill="#E8856C"/></svg>
+    </div>
+
+    <h2 class="fade-in">Ce soir, ça peut changer.</h2>
+    <p class="final-cta__tagline fade-in">5 nuits pour tout changer.</p>
+
+    <div class="fade-in">
+      <a href="#checkout" class="cta cta--large">
+        Je veux retrouver mes soirées — 17&euro;
+        <span class="cta-subtitle">Guide PDF + 2 bonus &middot; Accès immédiat</span>
+      </a>
+    </div>
+
+    <div class="guarantee fade-in">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      <span>Paiement 100% sécurisé</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer__logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="48" height="48">
+      <path d="M60 15C42 15 27 30 27 48.5S42 82 60 82c2.5 0 4.9-.4 7.1-.9C58.5 77 52.5 67 52.5 56c0-12.5 8.1-23.1 18.4-26.6C67.5 24.5 64 22 60 15z" fill="#B8A9D4" opacity="0.5"/>
+      <g transform="translate(24, 90)">
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(16,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(32,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(48,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(64,0)"/>
+      </g>
+    </svg>
+  </div>
+  <p style="margin-bottom: 4px;">5 Nuits &mdash; Le sommeil de votre enfant, nuit après nuit.</p>
+  <p><a href="#">Mentions légales</a> &middot; <a href="#">CGV</a> &middot; <a href="mailto:methode5nuits@gmail.com">Contact</a></p>
+</footer>
+
+
+<!-- ============================================================
+     STICKY CTA MOBILE
+     ============================================================ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#checkout" class="cta">Je commence ce soir — 17&euro;</a>
+</div>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+// --- FAQ Accordéon ---
+document.querySelectorAll('.faq-item__question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = this.parentElement;
+    var answer = item.querySelector('.faq-item__answer');
+    var isOpen = item.classList.contains('open');
+
+    // Fermer tous
+    document.querySelectorAll('.faq-item').forEach(function(el) {
+      el.classList.remove('open');
+      el.querySelector('.faq-item__answer').style.maxHeight = null;
+    });
+
+    // Ouvrir celui-ci si pas déjà ouvert
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// --- Sticky CTA Mobile (apparaît après scroll hero) ---
+var stickyCta = document.getElementById('stickyCta');
+var hero = document.querySelector('.hero');
+
+if (stickyCta && hero) {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        stickyCta.classList.remove('visible');
+      } else {
+        stickyCta.classList.add('visible');
+      }
+    });
+  }, { threshold: 0 });
+  observer.observe(hero);
+}
+
+// --- Fade-in on scroll ---
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  var fadeEls = document.querySelectorAll('.fade-in');
+  var fadeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  fadeEls.forEach(function(el) { fadeObserver.observe(el); });
+}
+</script>
+
+</body>
+</html>

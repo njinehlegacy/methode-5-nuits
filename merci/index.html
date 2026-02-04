@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci ! — La Méthode des 5 Nuits</title>
+<meta name="description" content="Votre guide La Méthode des 5 Nuits est en route. Vérifiez votre boîte mail.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bleu-nuit: #1B2A4A;
+  --lavande: #B8A9D4;
+  --bleu-pastel: #C5D5E8;
+  --beige-lune: #F5EDE3;
+  --corail: #E8856C;
+  --corail-hover: #D4704F;
+  --gris-charbon: #2D3142;
+  --blanc-casse: #FAFAF7;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: 'Caveat', cursive;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 4px 20px rgba(27, 42, 74, 0.08);
+
+  --max-width: 640px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--gris-charbon);
+  line-height: 1.6;
+  background: var(--blanc-casse);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-heading); line-height: 1.25; }
+a { color: inherit; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   HERO / CONFIRMATION
+   ============================================================ */
+.hero {
+  background: var(--bleu-nuit);
+  color: #fff;
+  text-align: center;
+  padding: 60px 24px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(184,169,212,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(197,213,232,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__logo {
+  margin-bottom: 32px;
+}
+
+.hero__logo svg {
+  width: 48px;
+  height: auto;
+}
+
+/* Checkmark animation */
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 28px;
+  position: relative;
+}
+
+.checkmark-circle__bg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--corail);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+}
+
+.checkmark-circle__check {
+  width: 36px;
+  height: 36px;
+  stroke: #fff;
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: drawCheck 0.4s ease 0.7s forwards;
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+.hero__title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  animation: fadeUp 0.5s ease 0.4s both;
+}
+
+.hero__subtitle {
+  font-family: var(--font-accent);
+  font-size: 22px;
+  color: var(--lavande);
+  margin-bottom: 0;
+  animation: fadeUp 0.5s ease 0.6s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   EMAIL INSTRUCTIONS
+   ============================================================ */
+.email-section {
+  padding: 48px 24px;
+  background: var(--blanc-casse);
+}
+
+.email-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.email-card__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  background: var(--beige-lune);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.email-card__title {
+  font-size: 20px;
+  color: var(--bleu-nuit);
+  margin-bottom: 24px;
+}
+
+.email-steps {
+  list-style: none;
+  text-align: left;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.email-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.email-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.email-steps__num {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  background: var(--corail);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.email-steps__text {
+  padding-top: 3px;
+}
+
+.email-steps__text strong {
+  color: var(--bleu-nuit);
+}
+
+.email-steps__text a {
+  color: var(--corail);
+  text-decoration: none;
+}
+
+/* ============================================================
+   NEXT STEPS
+   ============================================================ */
+.next-steps {
+  background: var(--beige-lune);
+  padding: 48px 24px;
+}
+
+.next-steps .container {
+  text-align: center;
+}
+
+.next-steps__title {
+  font-size: 24px;
+  color: var(--bleu-nuit);
+  margin-bottom: 8px;
+}
+
+.next-steps__accent {
+  font-family: var(--font-accent);
+  font-size: 20px;
+  color: var(--corail);
+  margin-bottom: 24px;
+}
+
+.next-steps__card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-card);
+  text-align: left;
+  position: relative;
+  border-left: 4px solid var(--corail);
+}
+
+.next-steps__night {
+  font-family: var(--font-accent);
+  font-size: 22px;
+  color: var(--corail);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.next-steps__card-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--bleu-nuit);
+  margin-bottom: 8px;
+}
+
+.next-steps__card p {
+  font-size: 15px;
+  opacity: 0.85;
+  margin-bottom: 0;
+}
+
+.next-steps__chapter {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--lavande);
+  background: var(--bleu-nuit);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ============================================================
+   SOCIAL / FOLLOW
+   ============================================================ */
+.social-section {
+  padding: 48px 24px;
+  background: var(--blanc-casse);
+  text-align: center;
+}
+
+.social-section__title {
+  font-size: 20px;
+  color: var(--bleu-nuit);
+  margin-bottom: 8px;
+}
+
+.social-section__subtitle {
+  font-size: 15px;
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--bleu-nuit);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.social-link:hover {
+  background: var(--gris-charbon);
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--bleu-nuit);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 13px;
+}
+
+.footer__logo {
+  margin-bottom: 16px;
+}
+
+.footer__logo svg {
+  width: 48px;
+  height: auto;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--lavande);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 26px;
+  }
+
+  .hero__subtitle {
+    font-size: 19px;
+  }
+
+  .email-card {
+    padding: 28px 20px;
+  }
+
+  .next-steps__card {
+    padding: 24px 20px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-link {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HERO — CONFIRMATION
+     ============================================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="48" height="48">
+        <path d="M60 15C42 15 27 30 27 48.5S42 82 60 82c2.5 0 4.9-.4 7.1-.9C58.5 77 52.5 67 52.5 56c0-12.5 8.1-23.1 18.4-26.6C67.5 24.5 64 22 60 15z" fill="#B8A9D4"/>
+        <g transform="translate(24, 90)">
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(16,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(32,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(48,0)"/>
+          <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" transform="translate(64,0)"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="checkmark-circle">
+      <div class="checkmark-circle__bg">
+        <svg class="checkmark-circle__check" viewBox="0 0 36 36">
+          <polyline points="8 18 15 25 28 11" />
+        </svg>
+      </div>
+    </div>
+
+    <h1 class="hero__title">Merci ! Votre guide est en route.</h1>
+    <p class="hero__subtitle">V&eacute;rifiez votre bo&icirc;te mail dans les prochaines minutes.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EMAIL INSTRUCTIONS
+     ============================================================ -->
+<section class="email-section">
+  <div class="container">
+    <div class="email-card">
+      <div class="email-card__icon">&#128231;</div>
+      <h2 class="email-card__title">Comment r&eacute;cup&eacute;rer votre guide</h2>
+
+      <ol class="email-steps">
+        <li>
+          <span class="email-steps__num">1</span>
+          <span class="email-steps__text">
+            <strong>V&eacute;rifiez votre bo&icirc;te de r&eacute;ception</strong><br>
+            Pensez aussi &agrave; regarder dans les spams et l'onglet "Promotions".
+          </span>
+        </li>
+        <li>
+          <span class="email-steps__num">2</span>
+          <span class="email-steps__text">
+            <strong>Cherchez un email de</strong><br>
+            <a href="mailto:methode5nuits@gmail.com">methode5nuits@gmail.com</a>
+          </span>
+        </li>
+        <li>
+          <span class="email-steps__num">3</span>
+          <span class="email-steps__text">
+            <strong>T&eacute;l&eacute;chargez le PDF</strong><br>
+            Le guide est en pi&egrave;ce jointe, pr&ecirc;t &agrave; lire ce soir.
+          </span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     NEXT STEPS — TEASER NUIT 1
+     ============================================================ -->
+<section class="next-steps">
+  <div class="container">
+    <h2 class="next-steps__title">Ce soir, commencez par...</h2>
+    <p class="next-steps__accent">La premi&egrave;re nuit est la plus simple</p>
+
+    <div class="next-steps__card">
+      <p class="next-steps__night">Nuit 1</p>
+      <h3 class="next-steps__card-title">Le rituel et la pr&eacute;sence rassurante</h3>
+      <p>Installez le rituel du soir et restez assis(e) au bord du lit. Contact possible, pr&eacute;sence totale. Votre enfant s'endort en sachant que vous &ecirc;tes l&agrave;.</p>
+      <span class="next-steps__chapter">Chapitre 3 du guide</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SOCIAL / FOLLOW
+     ============================================================ -->
+<section class="social-section">
+  <div class="container">
+    <h2 class="social-section__title">Rejoignez la communaut&eacute;</h2>
+    <p class="social-section__subtitle">Conseils quotidiens pour des nuits plus douces</p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/5nuits?igsh=MXZ5ZnA0bm9leDhmNw==" class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.53.02C13.84 0 15.14.01 16.44.04c1.17.05 2.21.2 3.03.55a6.1 6.1 0 0 1 2.22 1.45 6.1 6.1 0 0 1 1.45 2.22c.35.82.5 1.86.55 3.03.04 1.3.05 2.6.04 3.92v1.58c.01 1.32 0 2.62-.04 3.92-.05 1.17-.2 2.21-.55 3.03a6.1 6.1 0 0 1-1.45 2.22 6.1 6.1 0 0 1-2.22 1.45c-.82.35-1.86.5-3.03.55-1.3.04-2.6.05-3.92.04h-1.58c-1.32.01-2.62 0-3.92-.04-1.17-.05-2.21-.2-3.03-.55a6.1 6.1 0 0 1-2.22-1.45A6.1 6.1 0 0 1 .82 19.8c-.35-.82-.5-1.86-.55-3.03C.23 15.47.22 14.17.23 12.85v-1.7C.22 9.83.23 8.53.27 7.23c.05-1.17.2-2.21.55-3.03A6.1 6.1 0 0 1 2.27 1.98 6.1 6.1 0 0 1 4.49.53C5.31.18 6.35.03 7.52-.02 8.82-.05 10.12-.06 11.42-.05h1.11ZM12 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84Zm0 2.16a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm6.4-3.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@5nuits?_r=1&_t=ZN-93e5y6QUL1K" class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.4a8.16 8.16 0 0 0 4.77 1.53V7.48a4.84 4.84 0 0 1-1.01-.79Z"/>
+        </svg>
+        TikTok
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer__logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="48" height="48">
+      <path d="M60 15C42 15 27 30 27 48.5S42 82 60 82c2.5 0 4.9-.4 7.1-.9C58.5 77 52.5 67 52.5 56c0-12.5 8.1-23.1 18.4-26.6C67.5 24.5 64 22 60 15z" fill="#B8A9D4" opacity="0.5"/>
+      <g transform="translate(24, 90)">
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(16,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(32,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(48,0)"/>
+        <polygon points="6,0 7.9,4 13,4.5 9.5,7.5 10.5,12.5 6,10 1.5,12.5 2.5,7.5 0,4.5 4.1,4" fill="#E8856C" opacity="0.5" transform="translate(64,0)"/>
+      </g>
+    </svg>
+  </div>
+  <p style="margin-bottom: 4px;">5 Nuits &mdash; Le sommeil de votre enfant, nuit apr&egrave;s nuit.</p>
+  <p><a href="#">Mentions l&eacute;gales</a> &middot; <a href="#">CGV</a> &middot; <a href="mailto:methode5nuits@gmail.com">Contact</a></p>
+</footer>
+
+<!-- Pixel de tracking (décommentez et remplacez par votre pixel)
+<script>
+  // Facebook Pixel, Google Analytics, etc.
+</script>
+-->
+
+</body>
+</html>
